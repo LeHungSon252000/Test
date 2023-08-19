@@ -97,44 +97,83 @@ bba
 bbb
  */
 
-function printAllKLength(set, k) {
-  let n = set.length;
-  printAllKLengthRec(set, "", n, k);
+// function printAllKLength(set, k) {
+//   let n = set.length;
+//   printAllKLengthRec(set, "", n, k);
+// }
+
+// // The main recursive method
+// // to print all possible
+// // strings of length k
+// function printAllKLengthRec(set, prefix, n, k) {
+//   // Base case: k is 0,
+//   // print prefix
+//   if (k == 0) {
+//     document.write(prefix + "<br>");
+//     return;
+//   }
+
+//   // One by one add all characters
+//   // from set and recursively
+//   // call for k equals to k-1
+//   for (let i = 0; i < n; ++i) {
+//     console.log("k-th ::", k);
+//     // Next character of input added
+//     console.log("lan thu ", i);
+
+//     let newPrefix = prefix + set[i];
+//     console.log("prefix::", prefix);
+//     console.log("set[i]::", set[i]);
+
+//     console.log("newPrefix::", newPrefix);
+
+//     // k is decreased, because
+//     // we have added a new character
+//     printAllKLengthRec(set, newPrefix, n, k - 1);
+//   }
+// }
+
+// // Driver Code
+// document.write("First Test<br>");
+// let set1 = ["H", "L", "S"];
+// let k = 2;
+// printAllKLength(set1, k);
+
+/**
+ * Input : s = “235813”
+Output : true
+2 + 3 = 5, 3 + 5 = 8, 5 + 8 = 13
+
+Input : s = “199100199”
+Output : true
+1 + 99 = 100, 99 + 100 = 199
+ */
+
+function chuoiSoCong(s) {
+  const n = s.length;
+  console.log("so luong phan tu", n);
+  if (n < 3) {
+    return false;
+  }
+  let numbers = [];
+  for (let i = 0; i < n; i++) {
+    numbers.push(Number(s[i]));
+  }
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n - 1; j++) {
+      for (let k = j + 1; k < n - 2; k++) {
+        console.log(numbers[i], numbers[j], numbers[k]);
+        // if (numbers[i] + numbers[j] == numbers[k]) {
+        //   return true;
+        // }
+      }
+    }
+  }
+  return false;
 }
 
-// The main recursive method
-// to print all possible
-// strings of length k
-function printAllKLengthRec(set, prefix, n, k) {
-  // Base case: k is 0,
-  // print prefix
-  if (k == 0) {
-    document.write(prefix + "<br>");
-    return;
-  }
-
-  // One by one add all characters
-  // from set and recursively
-  // call for k equals to k-1
-  for (let i = 0; i < n; ++i) {
-    console.log("k-th ::", k);
-    // Next character of input added
-    console.log("lan thu ", i);
-
-    let newPrefix = prefix + set[i];
-    console.log("prefix::", prefix);
-    console.log("set[i]::", set[i]);
-
-    console.log("newPrefix::", newPrefix);
-
-    // k is decreased, because
-    // we have added a new character
-    printAllKLengthRec(set, newPrefix, n, k - 1);
-  }
-}
-
-// Driver Code
-document.write("First Test<br>");
-let set1 = ["H", "L", "S"];
-let k = 2;
-printAllKLength(set1, k);
+var n = "002003";
+console.log(`ket qua cua ${n}`, chuoiSoCong(n));
+let a = 1;
+let b = 2;
+console.log(a + b);
