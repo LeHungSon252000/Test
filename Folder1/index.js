@@ -172,7 +172,7 @@ function chuoiSoCong(s) {
   return false;
 }
 
-var n = "002003";
+var n = "00202";
 console.log(`ket qua cua ${n}`, chuoiSoCong(n));
 let a = 1;
 let b = 2;
