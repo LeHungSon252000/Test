@@ -1,0 +1,1 @@
+console.log("moi them index.js lan 1")
