@@ -61,21 +61,80 @@ console.log("sua lan 2 vao luc 19/08/2023 10:40 AM");
 // }
 //////-------------------------BÀI 2
 
-function checkPalindrome(str) {
-  // Calculating string length
-  const len = str.length;
+// function checkPalindrome(str) {
+//   // Calculating string length
+//   const len = str.length;
 
-  // Traversing through the string
-  // upto half its length
-  for (let i = 0; i < len / 2; i++) {
-    // Comparing i th character
-    // from starting and len-i
-    // th character from end
-    if (str[i] != str[len - i - 1]) return false;
+//   // Traversing through the string
+//   // upto half its length
+//   for (let i = 0; i < len / 2; i++) {
+//     // Comparing i th character
+//     // from starting and len-i
+//     // th character from end
+//     if (str[i] != str[len - i - 1]) return false;
+//   }
+
+//   // If the above loop doesn't return then it is
+//   // palindrome
+//   return true;
+// }
+// console.log(`check ket qua 12322`, checkPalindrome("12322"));
+
+///Given a set of characters and a positive integer k, print all possible strings of length k that can be formed from the given set.
+///Cho một tập hợp các ký tự và một số nguyên dương k, hãy in tất cả các chuỗi có thể có độ dài k có thể được tạo thành từ tập hợp đã cho.
+/**
+ * Input: 
+set[] = {'a', 'b'}, k = 3
+
+Output:
+aaa
+aab
+aba
+abb
+baa
+bab
+bba
+bbb
+ */
+
+function printAllKLength(set, k) {
+  let n = set.length;
+  printAllKLengthRec(set, "", n, k);
+}
+
+// The main recursive method
+// to print all possible
+// strings of length k
+function printAllKLengthRec(set, prefix, n, k) {
+  // Base case: k is 0,
+  // print prefix
+  if (k == 0) {
+    document.write(prefix + "<br>");
+    return;
   }
 
-  // If the above loop doesn't return then it is
-  // palindrome
-  return true;
+  // One by one add all characters
+  // from set and recursively
+  // call for k equals to k-1
+  for (let i = 0; i < n; ++i) {
+    console.log("k-th ::", k);
+    // Next character of input added
+    console.log("lan thu ", i);
+
+    let newPrefix = prefix + set[i];
+    console.log("prefix::", prefix);
+    console.log("set[i]::", set[i]);
+
+    console.log("newPrefix::", newPrefix);
+
+    // k is decreased, because
+    // we have added a new character
+    printAllKLengthRec(set, newPrefix, n, k - 1);
+  }
 }
-console.log(`check ket qua 12322`, checkPalindrome("12322"));
+
+// Driver Code
+document.write("First Test<br>");
+let set1 = ["H", "L", "S"];
+let k = 2;
+printAllKLength(set1, k);
