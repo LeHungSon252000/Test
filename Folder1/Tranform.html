@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        position: relative;
+      }
+      div:hover {
+        cursor: pointer;
+      }
+      #divCha:hover #myDiv {
+        transform: rotate(-45deg);
+        background-color: red;
+        transition: all 0.4s ease-in;
+      }
+
+      #myDiv {
+        transform: rotate(0deg);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The rotate() Method</h1>
+
+    <p>
+      The rotate() method rotates an element clockwise or counter-clockwise.
+    </p>
+
+    <div id="divCha">This a normal div element.</div>
+
+    <div id="myDiv">This div element is rotated clockwise 20 degrees.</div>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const divCha = document.querySelector("#divCha");
+    const myDiv = document.querySelector("#myDiv");
+
+    divCha.addEventListener("mouseenter", function () {
+      // myDiv.style.transform = "rotateX(180deg)";
+      myDiv.style.backgroundColor = "red";
+      myDiv.style.transform = "scale(2,2) ";
+
+      myDiv.style.transition = "all 0.4s ease-in";
+    });
+
+    divCha.addEventListener("mouseleave", function () {
+      myDiv.style.transform = "rotate(0deg)";
+      myDiv.style.backgroundColor = "";
+    });
+  });
+</script>
