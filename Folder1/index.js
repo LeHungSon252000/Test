@@ -405,3 +405,79 @@ console.log(
   "so be nhat va lon nhat la : ",
   FindMinAndMax(array1, array1.length - 1)
 );
+
+console.log("====================================");
+/**
+ * Given an array arr[] of integers. Find a peak element i.e. an element that is not smaller than its neighbors. 
+
+Note: For corner elements, we need to consider only one neighbor. 
+
+Example:
+
+Input: array[]= {5, 10, 20, 15}
+Output: 20
+Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20.
+ */
+const TimPhanTuCucDai = (arr) => {
+  let Res = [];
+  const n = arr.length;
+  console.log(arr);
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k = j + 1; k < n; k++) {
+        console.log("a[i] a[j] a[k]", arr[i], arr[j], arr[k]);
+        if (j == i + 1 && k == j + 1) {
+          if (arr[j] > arr[i] && arr[j] > arr[k]) {
+            if (!Res.includes(arr[j])) {
+              Res.push(arr[j]);
+            }
+          }
+        }
+      }
+    }
+  }
+  if (arr[0] > arr[1]) {
+    Res.push(arr[0]);
+  }
+  if (arr[n - 1] > arr[n - 2]) {
+    Res.push(arr[n - 1]);
+  }
+  return Res;
+};
+const array = [10, 20, 30, 40, 50, 60];
+
+console.log(TimPhanTuCucDai(array));
+
+console.log("=========================================");
+/**
+ * Given an array arr of N elements,  A majority element in an array arr of size N is an element that appears more than N/2 times in the array.
+ * The task is to write a function say isMajority() that takes an array (arr[] ),
+ * array’s size (n) and a number to be searched (x) as parameters and returns true if x is a majority element (present more than n/2 times).
+ * Input: arr[] = {1, 2, 3, 3, 3, 3, 10}, x = 3
+Output: True (x appears more than n/2 times in the given array)
+
+Input: arr[] = {1, 1, 2, 4, 4, 4, 6, 6}, x = 4
+Output: False (x doesn't appear more than n/2 times in the given array)
+
+Input: arr[] = {1, 1, 1, 2, 2}, x = 1
+Output: True (x appears more than n/2 times in the given array)
+ */
+
+const FindX = (arr, x) => {
+  console.log("arr.length", arr.length);
+  let count = 0;
+  arr.forEach((element) => {
+    console.log("element:", element);
+    console.log("count la ", count);
+
+    if (element == x) {
+      count++;
+    }
+  });
+  if (count >= arr.length / 2) {
+    return true;
+  }
+  return false;
+};
+const array2 = [1, 2, 3, 3, 3, 3, 10];
+console.log("dung khong ha: ", FindX(array2, 3));
