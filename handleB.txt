@@ -4,3 +4,4 @@ Va duoc len tu nhanh HanldeB
 
 Nội dung này được gửi từ branch HanldeA
 Đây là dòng thư 6 được gửi từ branch HandleB
+Dòng này gửi từ nhánh HandleB lúc 2h37PM ngày 22/08/2023
