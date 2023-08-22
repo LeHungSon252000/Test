@@ -1,2 +1,5 @@
 Day la noi dung cua file HanldeB.txt
 Va duoc len tu nhanh HanldeB
+
+
+Nội dung này được gửi từ branch HanldeA
