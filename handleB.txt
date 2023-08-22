@@ -3,3 +3,4 @@ Va duoc len tu nhanh HanldeB
 
 
 Nội dung này được gửi từ branch HanldeA
+Đây là dòng thư 6 được gửi từ branch HandleB
