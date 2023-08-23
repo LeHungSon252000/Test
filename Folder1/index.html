@@ -60,6 +60,19 @@
         padding: 20px;
         text-align: center;
       }
+      .element {
+        animation-name: slide; /* Đặt tên animation là "slide" */
+        animation-duration: 2s;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100px);
+        }
+      }
 
       /* Responsive Styles */
       @media (max-width: 600px) {
@@ -81,6 +94,8 @@
         Chào mừng bạn đến với trang web ví dụ về responsive design! Trang này sẽ
         thay đổi giao diện tùy theo kích thước của màn hình.
       </p>
+      <p class="element">HELLO MẤY CƯNG</p>
+      <link src="./index.js" />
     </div>
   </body>
 </html>

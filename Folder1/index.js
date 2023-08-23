@@ -405,3 +405,4 @@ console.log(
   "so be nhat va lon nhat la : ",
   FindMinAndMax(array1, array1.length - 1)
 );
+console.log("======================================");
