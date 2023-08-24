@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fireworks Animation</title>
+  </head>
+  <body>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #6c5d5d;
+        margin: 0;
+      }
+
+      .firework {
+        position: relative;
+        width: 10px;
+        height: 100px;
+        animation: shoot 3s linear infinite;
+      }
+
+      .rocket {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 30px;
+        background-color: #fff;
+        animation: shoot-rocket 3s linear infinite;
+      }
+
+      .explosion {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f00;
+        opacity: 0;
+        animation: explode 3s linear infinite;
+      }
+
+      @keyframes shoot {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-300px);
+        }
+      }
+
+      @keyframes shoot-rocket {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(-300px);
+        }
+      }
+
+      @keyframes explode {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+    <div class="firework">
+      <div class="rocket"></div>
+      <div class="explosion"></div>
+    </div>
+  </body>
+</html>
